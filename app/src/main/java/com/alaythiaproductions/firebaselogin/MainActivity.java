@@ -18,15 +18,14 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnSignUp;
     private EditText registerEmail, registerPassword;
-
-    private FirebaseAuth mAuth;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
 
         registerEmail = findViewById(R.id.register_email);
         registerPassword = findViewById(R.id.register_password);
@@ -53,13 +52,13 @@ public class MainActivity extends AppCompatActivity {
         } else if (password.length() < 6) {
             Toast.makeText(MainActivity.this, "Password Must Be 6 Characters or More", Toast.LENGTH_SHORT).show();
         } else {
-            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(MainActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(MainActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "User Already Exists", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
