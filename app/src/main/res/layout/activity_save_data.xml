@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".SaveData">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -16,7 +15,7 @@
         <TextView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="Insert New Data"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -26,28 +25,38 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/register_email"
+            android:id="@+id/name"
             android:layout_marginTop="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:hint="Email"
-            android:textColor="#000000"
+            android:hint="Name"
             android:ems="10"
-            android:inputType="textEmailAddress" />
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/register_password"
+            android:id="@+id/phone_number"
             android:layout_marginTop="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:hint="Password"
+            android:hint="Phone Number"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_marginTop="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:hint="Address"
+            android:ems="10"
+            android:inputType="text" />
+
 
         <Button
-            android:id="@+id/register_button"
+            android:id="@+id/insert_data"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="20sp"
@@ -55,8 +64,8 @@
             android:textColor="@android:color/white"
             android:textAllCaps="true"
             android:layout_gravity="center"
-            android:text="Sign Up"/>
+            android:text="Insert"/>
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

@@ -15,7 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class Register extends AppCompatActivity {
 
     private Button btnSignUp;
     private EditText registerEmail, registerPassword;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register);
 
         auth = FirebaseAuth.getInstance();
 
@@ -47,22 +47,22 @@ public class MainActivity extends AppCompatActivity {
         password = registerPassword.getText().toString().trim();
 
         if (email.equals("")) {
-            Toast.makeText(MainActivity.this, "Email Required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Register.this, "Email Required", Toast.LENGTH_SHORT).show();
         } else if (password.equals("")) {
-            Toast.makeText(MainActivity.this, "Password Required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Register.this, "Password Required", Toast.LENGTH_SHORT).show();
         } else if (password.length() < 6) {
-            Toast.makeText(MainActivity.this, "Password Must Be 6 Characters or More", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Register.this, "Password Must Be 6 Characters or More", Toast.LENGTH_SHORT).show();
         } else {
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(MainActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, SignIn.class);
+                        Toast.makeText(Register.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Register.this, SignIn.class);
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(MainActivity.this, "User Already Exists", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Register.this, "User Already Exists", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +20,7 @@ public class SignIn extends AppCompatActivity {
 
     private Button btnSignIn;
     private EditText signInEmail, signInPassword;
+    private TextView registerLink;
     private FirebaseAuth auth;
 
     @Override
@@ -28,9 +30,20 @@ public class SignIn extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        registerLink = findViewById(R.id.register_link);
+
         signInEmail = findViewById(R.id.sign_in_email);
         signInPassword = findViewById(R.id.sign_in_password);
         btnSignIn = findViewById(R.id.sign_in_button);
+
+        registerLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignIn.this, Register.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
