@@ -1,10 +1,4 @@
-# firebase-login
-Using Google Firebase for CRUD operations on Android
 
-Screenshots of the app
-
-#<-- Login -->
-![login](https://user-images.githubusercontent.com/16580768/79004800-18e1b500-7b1b-11ea-9011-ab5f0fc2f9b8.png)
 <img src="https://user-images.githubusercontent.com/16580768/79004800-18e1b500-7b1b-11ea-9011-ab5f0fc2f9b8.png" width="256px")
 
 #<-- Home -->
