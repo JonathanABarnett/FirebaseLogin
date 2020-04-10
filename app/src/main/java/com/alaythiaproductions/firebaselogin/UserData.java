@@ -11,6 +11,8 @@ public class UserData {
         this.address = address;
     }
 
+    public UserData() {}
+
     public String getId() {
         return id;
     }
