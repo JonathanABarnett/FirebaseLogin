@@ -12,7 +12,7 @@
         app:cardElevation="4dp" >
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
@@ -82,22 +82,34 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/user_list_delete"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Delete"
-                android:background="#000"
-                android:textColor="#fff"
-                android:textAllCaps="true" />
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/user_list_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:layout_marginRight="20dp"
+                    android:background="#000"
+                    android:textColor="#fff"
+                    android:textAllCaps="true" />
+
+                <Button
+                    android:id="@+id/user_list_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update"
+                    android:background="#000"
+                    android:textColor="#fff"
+                    android:textAllCaps="true" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#000"/>
 
 </LinearLayout>

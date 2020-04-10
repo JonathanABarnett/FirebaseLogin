@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Insert New Data"
+            android:text="Update Data"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/update_name"
             android:layout_marginTop="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/phone_number"
+            android:id="@+id/update_phone_number"
             android:layout_marginTop="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             android:inputType="phone" />
 
         <EditText
-            android:id="@+id/address"
+            android:id="@+id/update_address"
             android:layout_marginTop="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
 
 
         <Button
-            android:id="@+id/insert_data"
+            android:id="@+id/update_data"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="20sp"
@@ -64,7 +64,7 @@
             android:textColor="@android:color/white"
             android:textAllCaps="true"
             android:layout_gravity="center"
-            android:text="Insert"/>
+            android:text="Update"/>
 
     </LinearLayout>
 

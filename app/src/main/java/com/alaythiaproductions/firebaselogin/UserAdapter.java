@@ -49,6 +49,21 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User Data").child(userData.getId());
                 databaseReference.removeValue();
                 Toast.makeText(context, "Data Delete", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), RetrieveData.class);
+                v.getContext().startActivity(intent);
+
+            }
+        });
+
+        holder.btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), UpdateData.class);
+                intent.putExtra("id", userData.getId());
+                intent.putExtra("name", userData.getName());
+                intent.putExtra("phone", userData.getPhone());
+                intent.putExtra("address", userData.getAddress());
+                v.getContext().startActivity(intent);
             }
         });
     }
@@ -61,7 +76,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView retrieveName, retrievePhone, retrieveAddress;
-        Button btnDelete;
+        Button btnDelete, btnUpdate;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +84,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             retrievePhone = itemView.findViewById(R.id.retrieve_phoneNumber);
             retrieveAddress = itemView.findViewById(R.id.retrieve_address);
             btnDelete = itemView.findViewById(R.id.user_list_delete);
+            btnUpdate = itemView.findViewById(R.id.user_list_update);
         }
     }
 
