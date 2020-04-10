@@ -1,5 +1,5 @@
 
-<img src="https://user-images.githubusercontent.com/16580768/79004800-18e1b500-7b1b-11ea-9011-ab5f0fc2f9b8.png" width="256px")
+<img src="https://user-images.githubusercontent.com/16580768/79004800-18e1b500-7b1b-11ea-9011-ab5f0fc2f9b8.png" width="256" />
 
 #<-- Home -->
 ![home](https://user-images.githubusercontent.com/16580768/79004848-2c8d1b80-7b1b-11ea-8eb7-1f4d95fa3702.png | width=250)
