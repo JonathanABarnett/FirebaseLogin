@@ -19,4 +19,4 @@ Using Google Firebase for CRUD operations on Android
 <img src="https://user-images.githubusercontent.com/16580768/79004900-4595cc80-7b1b-11ea-9426-080652463f24.png" width="300" />
 
 <h5>Firebase</h5>
-<img src="https://user-images.githubusercontent.com/16580768/79004941-61996e00-7b1b-11ea-9648-8da647e88583.PNG" width="300" />
+<img src="https://user-images.githubusercontent.com/16580768/79004941-61996e00-7b1b-11ea-9648-8da647e88583.PNG" width="500" />
