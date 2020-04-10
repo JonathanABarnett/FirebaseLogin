@@ -1,13 +1,19 @@
 package com.alaythiaproductions.firebaselogin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -31,11 +37,20 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        UserData userData = this.userData.get(position);
+        final UserData userData = this.userData.get(position);
 
         holder.retrieveName.setText(userData.getName());
         holder.retrievePhone.setText(userData.getPhone());
         holder.retrieveAddress.setText(userData.getAddress());
+
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User Data").child(userData.getId());
+                databaseReference.removeValue();
+                Toast.makeText(context, "Data Delete", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -46,13 +61,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView retrieveName, retrievePhone, retrieveAddress;
+        Button btnDelete;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             retrieveName = itemView.findViewById(R.id.retrieve_name);
             retrievePhone = itemView.findViewById(R.id.retrieve_phoneNumber);
             retrieveAddress = itemView.findViewById(R.id.retrieve_address);
-
+            btnDelete = itemView.findViewById(R.id.user_list_delete);
         }
     }
 
