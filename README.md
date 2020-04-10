@@ -1,13 +1,12 @@
 # firebase-login
 Using Google Firebase for CRUD operations on Android
 
-##App In Action
+<h3>App In Action</h3>
 <img src="https://user-images.githubusercontent.com/16580768/79007838-a4f6db00-7b21-11ea-9336-7861b88ca342.gif" width="300" />
 
+<h3>creenshots of the app</h3>
 
-##Screenshots of the app
-
-#<-- Login -->
+<h5>Login</h5>
 </br>
 <img src="https://user-images.githubusercontent.com/16580768/79004800-18e1b500-7b1b-11ea-9011-ab5f0fc2f9b8.png" width="300" />
 
